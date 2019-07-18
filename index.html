@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+
+  <script>
+
+    
+//Excuse the mess, I'm saving my different code attmpts for future dissecting. 
+
+//These variables are for my Game(); loop.
+    
+let roundHand =" ";
+let computerHandround =" ";
+let r;
+let playerScore = 0;
+let computerScore = 0;
+
+
+    
+    
+/*
+//This code is for the random computer hand, before looping.
+    
+ function computerPlay() {
+
+  let computerHand  = Math.random();
+
+  if (computerHand <= .30) {
+computerHand = "rock";
+} else if (computerHand <= .60) {
+computerHand = "paper";
+} else {
+computerHand = "scissors";
+}
+return computerHand;
+}
+ */
+/*-------------------------------------------------------------------------*/
+    
+/*
+//This code was to test a for loop in the computerPlay Function.
+
+function computerPlay() {
+
+for (r = 0; r < 5; r++) {
+  
+  let computerHand  = Math.random();
+
+  if (computerHand <= .30) {
+computerHand = "rock";
+} else if (computerHand <= .60) {
+computerHand = "paper";
+} else {
+computerHand = "scissors";
+}
+//return computerHand;
+  computerHandround +=  computerHand + "<br>";
+
+
+}
+      
+    } */
+/*-------------------------------------------------------------------------*/
+    
+
+// This is my working (so far) Game(); Loop function.
+
+ function Game (){    
+    
+for (r = 0; r < 5; r++) {
+  
+   
+playerSelection = prompt("JEN, KEN, PO?", "THROW IT OUT!");
+  
+  let computerHand  = Math.random();
+
+  if (computerHand <= .30) {
+computerHand = "rock";
+} else if (computerHand <= .60) {
+computerHand = "paper";
+} else {
+computerHand = "scissors";
+}
+  computerHandround =  computerHand;
+ 
+function playRound (playerSelection, computerHandround) {
+if (playerSelection.toLowerCase() === "rock" && computerHandround === "paper"){
+return ("Computer chooses Paper and wins! <br> Player score: " + playerScore++ + "<br> Computer score: " + computerScore + "<br>");
+} else if (playerSelection.toLowerCase()=== "rock" && computerHandround ==="scissors") {
+return ("Player chooses Rock and wins! <br> Player score: " + playerScore++ + "<br> Computer score: " + computerScore + "<br>"); 
+} else if (playerSelection.toLowerCase() === "paper" && computerHandround === "rock") {
+return ("Player chooses paper and wins! <br> Player score: " + playerScore++ + "<br> Computer score: " + computerScore + "<br>"); 
+} else if (playerSelection.toLowerCase() === "paper" && computerHandround === "scissors") {
+return ("Computer chooses Scissors wins! <br> Player score: " + playerScore + "<br> Computer score: " + computerScore++ + "<br>");
+} else if (playerSelection.toLowerCase() === "scissors" && computerHandround === "paper")
+{ return ("Player chooses Scissors and wins! <br> Player score: " + playerScore++ + "<br> Computer score: " + computerScore + "<br>"); 
+} else if (playerSelection.toLowerCase() === "scissors" && computerHandround === "rock") {
+return ("Computer chooses Rock and wins! <br> Player score: " + playerScore + "<br> Computer score: " + computerScore++ + "<br>");
+} else if (playerSelection.toLowerCase() === computerHandround) {
+return ("ITʼS A TIE!!! <br> Player score: " + playerScore + "<br> Computer score: " + computerScore + "<br>");
+} else {
+return("It's either a rock, paper, or scissors!");
+}
+}
+  
+  roundHand += playRound(playerSelection,computerHandround) + "<br>";
+    }
+    return roundHand;
+} 
+    
+ /*-------------------------------------------------------------------------*/   
+ //Function that tallies both player and computer score
+    
+   function winner (playerScore, computerScore) {
+      if (playerScore > computerScore) {
+        return ("Total score: <br> Player: " + playerScore + "<br>" + "Computer: " + computerScore + "<br> The Player wins!! Congrats!!");
+      }else if (playerScore === computerScore){
+        return("Total score: <br> Player: " + playerScore + "<br>" + "Computer: " + computerScore + "<br>The Player and Computer tied! Play again!")
+      } else {
+        return ("Total score: <br> Player: " + playerScore + "<br>" + "Computer: " + computerScore + "<br> The Comptuer wins!! Better luck next time!");
+      }
+    }
+  
+    
+    
+/*-------------------------------------------------------------------------*/   
+ /* //HA! I accidently discovered how to add the prompt to the loop!
+    //This function needed a lot of work anyway, if I'm correct, I would have to restructure my entire code! 
+    function userInput (r, playerSelection){
+    if (r < 5){
+    
+   let playerSelection = prompt("JEN, KEN, PO?", "THROW IT OUT!");
+    }
+    }
+    */
+    
+/*-------------------------------------------------------------------------*/    
+/*
+//This code is for my playRound function.
+function playRound (playerSelection, computerSelection) {
+if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper"){
+return ("Computer wins!");
+} else if (playerSelection.toLowerCase()=== "rock" && computerSelection ==="scissors") {
+return ("Player wins!"); 
+} else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+return ("Player wins!"); 
+} else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
+return ("Computer wins!");
+} else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper")
+{ return ("Player wins!"); 
+} else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
+return ("Computer wins!");
+} else if (playerSelection.toLowerCase() === computerSelection) {
+return ("ITʼS A TIE!!!");
+}else {
+return("It's either a rock, paper, or scissors!");
+}
+}
+*/
+/*-------------------------------------------------------------------------*/  
+    
+/* 
+//Ignore the "Do While" Loop.
+// I was only testing. I think the For Loop was what I was looking for.
+
+let roundnum = " ";
+let round = 0;  
+    
+   do {
+   round += 1;
+     roundnum += round + " ";
+     
+   } while (round < 5); 
+    
+   document.write(roundnum); */
+
+/*-------------------------------------------------------------------------*/ 
+ 
+ 
+ /* This is my test "For" Loop.
+ 
+ let text = " ";
+    let text2 =" ";
+    let i;
+    let test = "this is a test, and round ";
+    let num1 = 2;
+    let num2 = 3;
+  
+   function gtest(){
+      
+    for (i = 0; i < 5; i++) {
+    
+    function rtest(num1,num2) {
+      return num1 + num2;
+      
+  }
+     document.write(test + i + "<br>");
+ text += "The number is " + rtest(num1,num2) + i + "<br>";
+text2 += rtest(num1,num2) + "<br>";      
+}
+      return text2;
+   }
+   
+    
+    //document.write(text);
+    //document.write(text2);
+   // document.write(gtest());
+    
+    //document.write(rtest(num1,num2)); */
+    
+/*-------------------------------------------------------------------------*/    
+    
+//My prompt for Player input      
+//const playerSelection = prompt("JEN, KEN, PO?", "THROW IT OUT!");
+//Static input for the playerSelection variable 
+//const playerSelection = "scissors";
+//Non-loop computerPlay function   
+//const computerSelection = computerPlay();
+ 
+//For console.log, been using document.write instead for testing
+//console.log(playerSelection.toLowerCase());
+//console.log(computerPlay());
+//console.log(playRound(playerSelection, computerSelection));
+    
+//Non-loop playerSelection variable to see the outcome.    
+//document.write(playerSelection.toLowerCase() +"<br>");
+//Non-loop computerPlay function to see the outcome.   
+//document.write(computerSelection +"<br>");
+//Used to test my computerPlay loop function
+//document.write(computerHandround);
+//The piece of code that tripped me up during the early stages. No good.
+//document.write(computerPlay() + "<br>");
+//Non-loop playRound Funtion to text the outcome.
+//document.write(playRound(playerSelection, computerSelection) +"<br>");
+//Used to output the Game(); function loop
+
+document.write(Game());
+//Outputs winner function
+document.write(winner(playerScore, computerScore));
+  
+       
+   
+  </script>
+  
+    
+    
+</body>
+
+</html>
